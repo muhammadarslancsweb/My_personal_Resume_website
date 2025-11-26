@@ -1,0 +1,205 @@
+/* Root theme variables (light by default) */
+:root {
+    --primary-blue: #2563eb;
+    --muted: #6b7280;
+    --body-bg: #fafbff;
+    --text-color: #0f1720;
+    --card-bg: #ffffff;
+    --body-border: rgba(0, 0, 0, .06);
+    --radius: .75rem;
+}
+
+/* Dark theme override */
+[data-theme="dark"] {
+    --body-bg: #0a0a0b;
+    --text-color: #e6eef8;
+    --muted: #98a4b2;
+    --card-bg: #0f1720;
+    --body-border: rgba(255, 255, 255, .04);
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    background: var(--body-bg);
+    color: var(--text-color);
+    transition: background .2s, color .2s;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--body-border);
+}
+
+.navbar .nav-link {
+    color: var(--muted) !important;
+}
+
+.navbar .nav-link.active {
+    color: var(--text-color) !important;
+    font-weight: 600;
+}
+
+/* Cards & sections */
+.bg-light-card {
+    background: var(--card-bg);
+    border: 1px solid var(--body-border);
+    border-radius: var(--radius);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.section-sub {
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+/* Hero */
+.hero-img {
+    width: 320px;
+    max-width: 70%;
+    border-radius: 50%;
+}
+
+/* Stats */
+.stats-row .stat {
+    border-radius: .5rem;
+}
+
+/* Skills */
+.skill-bar {
+    background: rgba(0, 0, 0, 0.06);
+    height: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary-blue), #60a5fa);
+    transition: width 1.5s;
+}
+
+/* Projects */
+.project-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--body-border);
+    position: relative;
+    transition: transform .25s;
+}
+
+.project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Timeline */
+.timeline {
+    padding-left: 70px;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 26px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary-blue);
+    border-radius: 2px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 14px;
+    top: 10px;
+    width: 28px;
+    height: 28px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    border: 4px solid var(--card-bg);
+}
+
+/* Contact card */
+.contact-card {
+    border-radius: var(--radius);
+}
+
+/* Back to top */
+#backToTop {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1200;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+    .hero-img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 575px) {
+    .timeline {
+        padding-left: 40px;
+    }
+
+    .timeline::before {
+        left: 16px;
+    }
+
+    .timeline-marker {
+        left: 4px;
+    }
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+
+.btn-primary {
+    background: var(--primary-blue);
+    border: none;
+}
